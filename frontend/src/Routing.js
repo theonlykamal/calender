@@ -16,8 +16,8 @@ const Main = () => {
     
     <BrowserRouter>
       <Routes>
-            <Route exact path = '/' element = {<Login />} />
-            <Route exact path = 'app' element = {<CalenderApp />} />              
+            <Route exact path = 'login' element = {<Login />} />
+            <Route exact path = '/' element = {<CalenderApp />} />              
        
     </Routes>
 
