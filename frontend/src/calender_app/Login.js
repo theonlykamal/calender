@@ -56,7 +56,7 @@ function Login() {
       setLogInStatus({  msg: "Success", key: Math.random() });
       setLoading(false);
       localStorage.setItem("userData", JSON.stringify(response));
-      navigate("/app");
+      navigate("/");
     } catch (error) {
       
       console.log(error.reponse);
