@@ -278,26 +278,27 @@
     font-family: Inter;
     height: 100vh;
     width: 100vw;
-    background-color: #2f4550;
-    border-radius: 20px;
-    display: flex;
-
-}
-.image-container {
-    flex: 0.3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.login-box {
-    flex: 0.7;
     background-color: #fff;
     border-radius: 20px;
-    margin: 20px;
+    display: flex;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+
+
+}
+
+.login-box {
+    
+    background-color: #B8DBD9;
     border-radius: 20px;
-    margin: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 100px;
+    padding: 200px;
+    border-radius: 20px;
+    position: absolute;
+    box-shadow: 0px 0px 25px #2f4550;
+    
+    font-family: Inter;
     color: rgb(44, 48, 46);
     font-weight: bolder;
     display: flex;

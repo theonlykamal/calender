@@ -120,7 +120,7 @@ function Login() {
   return (
     <>
     <Backdrop 
-      sx = {{color : "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      sx = {{color : "#2f4550", zIndex: (theme) => theme.zIndex.drawer + 1 , }}
       open = {loading}
     >
       <CircularProgress color = "secondary" />
@@ -131,11 +131,7 @@ function Login() {
     <div className='login-container' style={{
       fontFamily: "Inter"
     }}>
-        <div className='image-container'>
-            <img  style = {{
-              borderRadius:"100px",
-            }}src = {pic} alt='Logo' className='welcome-logo' />
-        </div>
+        
 
 
 
