@@ -28,19 +28,25 @@ const DayEvents = ({ day, events  , onAdd}) => {
 
                         return (
                             <div className='event'>
-                                <img src={selectedDayMeeting.imageUrl} className='img'/>
-                                    <div className='details'>
-                                        <p className='name'>{selectedDayMeeting.name}</p>
-                                        <p className='time'>
-                                            <time dateTime={selectedDayMeeting.startDatetime}>
-                                                {format(startDateTime, 'h:mm a')}
-                                            </time>{' '}
-                                            -{' '}
-                                            <time dateTime={selectedDayMeeting.endDatetime}>
-                                                {format(endDateTime, 'h:mm a')}
-                                            </time>
-                                        </p>
-                                    </div>
+                                <div className='cat' style={{
+                                    backgroundColor: selectedDayMeeting.category,
+
+                                }}
+                                >
+                                        {console.log(selectedDayMeeting)}
+                                </div>
+                                <div className='details'>
+                                    <p className='name'>{selectedDayMeeting.name}</p>
+                                    <p className='time'>
+                                        <time dateTime={selectedDayMeeting.startDatetime}>
+                                            {format(startDateTime, 'h:mm a')}
+                                        </time>{' '}
+                                        -{' '}
+                                        <time dateTime={selectedDayMeeting.endDatetime}>
+                                            {format(endDateTime, 'h:mm a')}
+                                        </time>
+                                    </p>
+                                </div>
                             </div>
                             
                         )

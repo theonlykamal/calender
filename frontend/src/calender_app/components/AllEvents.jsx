@@ -19,6 +19,20 @@ const AllEvents = ({onDone, events}) => {
     return 0;
   })
 
+  sortedEvents = sortedEvents.sort((a, b) => {
+    const nameA = a.category.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.category.toUpperCase(); // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+  
+    // names must be equal
+    return 0;
+  });
+
   let eventProps = [];
 
   for (let i = 0; i < sortedEvents.length; i++) {
@@ -26,7 +40,7 @@ const AllEvents = ({onDone, events}) => {
     
     let currEvent = sortedEvents[i];
     
-    eventProps.push({id: currEvent.id, done: currEvent.done});
+    eventProps.push({id: currEvent.id, done: currEvent.done, color: currEvent.category});
     eventProps.push({id: currEvent.id, name: currEvent.name});
     eventProps.push({id: currEvent.id, datetime: currEvent.startDatetime});
   
@@ -90,6 +104,10 @@ const AllEvents = ({onDone, events}) => {
                             checked = {Object.values(eventProp)[1]} 
                             onChange={checkboxHandler}
                             name = {Object.values(eventProp)[0]}
+                            sx={{
+                              backgroundColor: Object.values(eventProp)[2],
+                              margin: "3px"
+                            }}
                           />) 
                           : (Object.keys(eventProp)[1] == "datetime" 
                             ? (<Chip

@@ -168,6 +168,9 @@ function Login() {
                 autoComplete='current-password'
                 color = "secondary"
                 name = "password"
+                sx={{
+                  height: "40px"
+                }}
                 onKeyDown={(event) => {
                   if (event.code === "Enter") {
                     loginHandler(); 

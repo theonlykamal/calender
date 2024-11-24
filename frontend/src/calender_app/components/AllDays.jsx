@@ -84,7 +84,11 @@ const AllDays = ({daySelect, events}) => {
                                         {events.filter((event) => 
                                             isSameDay(parseISO(event.startDatetime),day)).map((dayEvent) => {
                                                 return(
-                                                    <div key = {dayEvent.id} className='event-link'>
+                                                    <div key = {dayEvent.id} className='event-link'
+                                                            style={{
+                                                                backgroundColor: dayEvent.category
+                                                            }}
+                                                    >
                                                             {dayEvent.name}
                                                     </div>
                                                 )

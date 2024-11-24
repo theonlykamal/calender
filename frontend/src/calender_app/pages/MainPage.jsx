@@ -23,7 +23,7 @@ const MainPage = () => {
   //setEvents(userEvents)
   let nextId = events.length+1;
 
-  function addEventHandler( nameEve ) {
+  function addEventHandler( nameEve , color) {
     if (nameEve.length > 0) {
       const endTime = addHours(selectedDay,1).toISOString()
       const startTime = selectedDay.toISOString()
@@ -34,7 +34,7 @@ const MainPage = () => {
           { 
             id: ++nextId, 
             name: nameEve ,
-            imageUrl: "",
+            category: color,
             startDatetime: startTime,
             endDatetime: endTime,
             done: false

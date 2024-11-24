@@ -10,6 +10,7 @@ import Stack from '@mui/material/Stack';
 import AddCircleOutlineTwoToneIcon from '@mui/icons-material/AddCircleOutlineTwoTone';
 import { IconButton, TextField } from '@mui/material';
 import { useState } from 'react';
+import ColorHash from 'color-hash'
 
 export default function AddEvent({onAdd,events,day}) {
   const [open, setOpen] = React.useState(false);
@@ -22,7 +23,7 @@ export default function AddEvent({onAdd,events,day}) {
   };
 
 
-
+  var colorHash = new ColorHash();
 
   function handleListKeyDown(event) {
     if (event.key === 'Tab') {
@@ -34,17 +35,26 @@ export default function AddEvent({onAdd,events,day}) {
   }
 
   const [data, setData] = useState("")
+  const [color, setColor] = useState("")
 
   const changeHandler = (e) => {
-    console.log(data)
+    console.log(data,color)
     setData(e.target.value);
+
+  }
+  const changeHandlerCat = (e) => {
+    console.log(data,color)
+ 
+    setColor(e.target.value)
   }
 
   const handleClose = (event) => {
     console.log(events)
     const eventName = data;
+    const colorhex = colorHash.hex(color);
     setData("")
-    onAdd(eventName);
+    setColor("")
+    onAdd(eventName,colorhex);
         console.log(events)
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
@@ -123,10 +133,29 @@ export default function AddEvent({onAdd,events,day}) {
                     id="composition-menu"
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
+                    style={{
+                      display: "flex",
+                      flexDirection: "column"
+                    }}
 
 
                   >
                     <TextField 
+                      onChange = {changeHandlerCat}
+                      id="outlined-password-input" 
+                      label ='Category' 
+                      sx={{}}
+                      
+                      
+                      name = "category"
+                      onKeyDown={(event) => {
+                        if (event.code === "Enter") {
+                           
+                        }
+                      }}
+              />
+
+<TextField 
                       onChange = {changeHandler}
                       id="outlined-password-input" 
                       label ='Event Name' 
@@ -136,10 +165,11 @@ export default function AddEvent({onAdd,events,day}) {
                       name = "event-name"
                       onKeyDown={(event) => {
                         if (event.code === "Enter") {
-                           
+                          
                         }
                       }}
               />
+              
                     <MenuItem sx = {{
                       
                       

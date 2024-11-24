@@ -211,10 +211,11 @@
 
 .day-events .list{
 
-    max-height: 291px;
+    max-height: 360px;
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: #fff;
+    margin: 10px;
 
     /* border:solid; */
     border-width: 5px;
@@ -226,8 +227,10 @@
     flex: none;
     margin-inline: 20px;
     border-radius: 20px;
+    margin-block: 5px;
 
     align-items: center;
+
 
 }
 .day-events .list .event:hover{
@@ -235,8 +238,9 @@
 
 }
 
-.day-events .list .event .img{
-    width: 50px;
+.day-events .list .event .cat{
+    width: 35px;
+    height: 35px;
     border-radius: 9999px;
     padding: 10px;
 }
@@ -519,7 +523,7 @@
 
 .all-day-select .date{
 
-    font-size: 50px;
+    font-size: 40px;
 }
 
 
