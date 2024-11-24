@@ -42,8 +42,9 @@ export default function AddEvent({onAdd,events,day}) {
 
   const handleClose = (event) => {
     console.log(events)
-
-    onAdd(data);
+    const eventName = data;
+    setData("")
+    onAdd(eventName);
         console.log(events)
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
